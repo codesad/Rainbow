@@ -16,7 +16,7 @@ object Colours {
     val crystal = mutableListOf<Int>()
 
     fun fetchColours() {
-        val url = URL("https://gist.githubusercontent.com/codesad/16ecce757e53d507ab63de9c22f7d811/raw/2e511ace541b22a9041853900f89c7f7b3497a9e/exotics.json")
+        val url = URL("https://gist.githubusercontent.com/codesad/16ecce757e53d507ab63de9c22f7d811/raw/")
         val connection = url.openConnection() as HttpURLConnection
         connection.requestMethod = "GET"
         connection.connect()
