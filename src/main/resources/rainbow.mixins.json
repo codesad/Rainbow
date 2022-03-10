@@ -5,6 +5,7 @@
   "refmap": "mixins.rainbow.refmap.json",
   "mixins": [
     "IMixinGuiEditSign",
+    "MixinEntityItemFrame",
     "MixinFontRenderer",
     "MixinGuiContainer",
     "MixinLayerArmorBase",
