@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "me.sad.rainbow.mixins",
+  "refmap": "mixins.rainbow.refmap.json",
+  "mixins": [
+    "IMixinGuiEditSign",
+    "MixinFontRenderer",
+    "MixinGuiContainer",
+    "MixinLayerArmorBase",
+    "MixinRenderItem",
+    "MixinSplashProgress",
+    "MixinSplashProgressTransformer",
+    "MixinTileEntitySignRenderer"
+  ],
+  "verbose": true
+}

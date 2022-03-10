@@ -1,0 +1,9 @@
+[{
+  "modid": "rainbow",
+  "name": "Rainbow",
+  "description": "Adds colour to your game!\n/Rainbow for config.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/codesad/Rainbow",
+  "authorList": ["s_a_d", "Voxeeer"]
+}]
