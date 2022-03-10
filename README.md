@@ -1,5 +1,5 @@
 # Rainbow Mod
-
+Click [HERE](https://github.com/codesad/Rainbow/releases) to go to the download page!
 > A QoL Minecraft Forge mod centered around exotics.</br>
 > `/rainbow` to get started. </br>
 
