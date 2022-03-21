@@ -16,7 +16,12 @@ class TooltipEvent {
                 if (!event.showAdvancedItemTooltips) {
                     for (i in 0 until event.toolTip.size) {
                         if (event.toolTip[i] == EnumChatFormatting.ITALIC.toString() + StatCollector.translateToLocal("item.dyed")) {
-                            event.toolTip[i] = "Color: #${Integer.toHexString(nbtTagCompound.getInteger("color"))}"
+                            val colour = StringBuilder()
+                            colour.append(Integer.toHexString(nbtTagCompound.getInteger("color")).uppercase())
+                            while (colour.length < 6) {
+                                colour.insert(0, "0")
+                            }
+                            event.toolTip[i] = "Color: #$colour"
                         }
                     }
                 }
