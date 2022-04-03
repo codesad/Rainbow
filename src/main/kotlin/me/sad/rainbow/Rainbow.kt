@@ -22,7 +22,7 @@ import org.apache.logging.log4j.LogManager
 
 
 @SideOnly(Side.CLIENT)
-@Mod(modid = Rainbow.MOD_ID, name = Rainbow.MOD_NAME, version = "1.0.0", updateJSON = Rainbow.UPDATE_URL)
+@Mod(modid = Rainbow.MOD_ID, name = Rainbow.MOD_NAME, version = "1.0.2", updateJSON = Rainbow.UPDATE_URL)
 class Rainbow {
     @Mod.EventHandler
     fun onInit(event: FMLInitializationEvent) {

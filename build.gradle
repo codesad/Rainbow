@@ -6,7 +6,7 @@ plugins {
     id "org.jetbrains.kotlin.jvm" version "1.5.31"
 }
 
-version = "1.0.1-1.8.9"
+version = "1.0.2-1.8.9"
 group = "me.sad"
 archivesBaseName = "Rainbow"
 

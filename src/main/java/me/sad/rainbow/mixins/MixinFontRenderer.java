@@ -59,7 +59,7 @@ public abstract class MixinFontRenderer {
             }
             if (pos == 7) {
                 if (lastCode != '\u0000' && lastCode != 'r') {
-                    int dec = this.colorCode[shadow ? Character.digit(lastCode, 16) + 15 : Character.digit(lastCode, 16)];
+                    int dec = this.colorCode[shadow ? Character.digit(lastCode, 16) + 16 : Character.digit(lastCode, 16)];
                     this.setColor((float) (dec >> 16) / 255.0F, (float) (dec >> 8 & 255) / 255.0F, (float) (dec & 255) / 255.0F, this.alpha);
                     lastCode = '\u0000';
                 } else {
