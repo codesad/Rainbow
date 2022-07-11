@@ -1,5 +1,6 @@
 package me.sad.rainbow
 
+import gg.essential.api.EssentialAPI
 import net.minecraft.command.CommandBase
 import net.minecraft.command.ICommandSender
 
@@ -18,6 +19,6 @@ class Command : CommandBase() {
     }
 
     override fun processCommand(sender: ICommandSender?, args: Array<out String>?) {
-        Rainbow.displayScreen = Config.gui()
+        EssentialAPI.getGuiUtil().openScreen(Config.gui())
     }
 }

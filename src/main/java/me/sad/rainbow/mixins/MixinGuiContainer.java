@@ -2,7 +2,7 @@ package me.sad.rainbow.mixins;
 
 import me.sad.rainbow.Colours;
 import me.sad.rainbow.Config;
-import net.minecraft.client.gui.Gui;
+import me.sad.rainbow.Utils;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
@@ -22,26 +22,38 @@ public abstract class MixinGuiContainer {
         if (!nbt.hasKey("tag")) return;
         if (!nbt.getCompoundTag("tag").getCompoundTag("display").hasKey("color")) return;
         if (!nbt.getCompoundTag("tag").hasKey("ExtraAttributes")) return;
+        if (nbt.getCompoundTag("tag").getCompoundTag("ExtraAttributes").hasKey("item_dye")) return;
         if (!nbt.getCompoundTag("tag").getCompoundTag("ExtraAttributes").hasKey("id")) return;
-        int color = nbt.getCompoundTag("tag").getCompoundTag("display").getInteger("color");
+        int colour = nbt.getCompoundTag("tag").getCompoundTag("display").getInteger("color");
         String id = nbt.getCompoundTag("tag").getCompoundTag("ExtraAttributes").getString("id");
-        if (Config.getFairyHighlight()) {
-            if (Colours.getFairy().contains(color) && !id.startsWith("FAIRY_")) {
-                Gui.drawRect(slotIn.xDisplayPosition, slotIn.yDisplayPosition, slotIn.xDisplayPosition + 16, slotIn.yDisplayPosition + 16, Config.getFairyColour().getRGB());
-                return;
+        int x = slotIn.xDisplayPosition;
+        int y = slotIn.yDisplayPosition;
+
+        if (Colours.getFairy().contains(colour) && !Colours.getFairyIds().contains(id)) {
+            System.out.println(id);
+            if (Config.getFairyHighlight()) {
+                Utils.drawItemBackground(x, y, Config.getFairyColour());
             }
+            return;
         }
-        if (Config.getCrystalHighlight()) {
-            if (Colours.getCrystal().contains(color) && !id.startsWith("CRYSTAL_")) {
-                Gui.drawRect(slotIn.xDisplayPosition, slotIn.yDisplayPosition, slotIn.xDisplayPosition + 16, slotIn.yDisplayPosition + 16, Config.getCrystalColour().getRGB());
-                return;
+
+        if (Colours.getCrystal().contains(colour) && !Colours.getCrystalIds().contains(id)) {
+            if (Config.getCrystalHighlight()) {
+                Utils.drawItemBackground(x, y, Config.getCrystalColour());
             }
+            return;
         }
-        if (Config.getExoticHighlight()) {
-            if (Colours.getExotic().get(id) != null) {
-                if (!Colours.getExotic().get(id).contains(color)) {
-                    Gui.drawRect(slotIn.xDisplayPosition, slotIn.yDisplayPosition, slotIn.xDisplayPosition + 16, slotIn.yDisplayPosition + 16, Config.getExoticColour().getRGB());
-                }
+
+        if (Colours.getGlitched().containsKey(id) && Colours.getGlitched().get(id).contains(colour)) {
+            if (Config.getGlitchedHighlight()) {
+                Utils.drawItemBackground(x, y, Config.getGlitchedColour());
+            }
+            return;
+        }
+
+        if (Colours.getExotic().containsKey(id) && !Colours.getExotic().get(id).contains(colour)) {
+            if (Config.getExoticHighlight()) {
+                Utils.drawItemBackground(x, y, Config.getExoticColour());
             }
         }
     }

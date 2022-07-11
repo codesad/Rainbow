@@ -1,9 +1,7 @@
 package me.sad.rainbow
 
-import me.sad.rainbow.events.TickEvent
 import me.sad.rainbow.events.TooltipEvent
 import net.minecraft.client.Minecraft
-import net.minecraft.client.gui.GuiScreen
 import net.minecraft.event.ClickEvent
 import net.minecraft.event.HoverEvent
 import net.minecraft.util.ChatComponentText
@@ -22,13 +20,12 @@ import org.apache.logging.log4j.LogManager
 
 
 @SideOnly(Side.CLIENT)
-@Mod(modid = Rainbow.MOD_ID, name = Rainbow.MOD_NAME, version = "1.0.2", updateJSON = Rainbow.UPDATE_URL)
+@Mod(modid = Rainbow.MOD_ID, name = Rainbow.MOD_NAME, version = "1.1.0", updateJSON = Rainbow.UPDATE_URL)
 class Rainbow {
     @Mod.EventHandler
     fun onInit(event: FMLInitializationEvent) {
         LOGGER.info("Initialising Rainbow.")
         MinecraftForge.EVENT_BUS.register(this)
-        MinecraftForge.EVENT_BUS.register(TickEvent())
         MinecraftForge.EVENT_BUS.register(TooltipEvent())
         ClientCommandHandler.instance.registerCommand(Command())
         Config.initialize()
@@ -42,7 +39,6 @@ class Rainbow {
         const val MOD_NAME = "Rainbow"
         const val UPDATE_URL = "https://gist.github.com/codesad/d2889f39e6d2a77265d7b13420472099/raw/"
         const val PREFIX = "\u00a7cR\u00a76a\u00a7ei\u00a7an\u00a7bb\u00a79o\u00a7dw \u00a75● \u00a7f"
-        var displayScreen: GuiScreen? = null
         @get:JvmName("getLogger")
         @JvmStatic
         val LOGGER = LogManager.getLogger(MOD_ID)!!
@@ -58,7 +54,7 @@ class Rainbow {
             val player = Minecraft.getMinecraft().thePlayer
             val newSplit = result.target.toString().split(".")
             val curSplit = Loader.instance().activeModContainer().version.split(".")
-            var type = "";
+            var type = ""
             for (i in newSplit.size - 1 downTo 0) {
                 if (curSplit[i] != newSplit[i]) {
                     type = when (i) {

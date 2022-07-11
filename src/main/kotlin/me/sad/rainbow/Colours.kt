@@ -11,9 +11,27 @@ object Colours {
     @JvmStatic
     val exotic = mutableMapOf<String, List<Int>>()
     @JvmStatic
+    val glitched = mutableMapOf<String, List<Int>>()
+    @JvmStatic
     val fairy = mutableListOf<Int>()
     @JvmStatic
     val crystal = mutableListOf<Int>()
+
+    @JvmStatic
+    val fairyIds = listOf(
+        "FAIRY_BOOTS",
+        "FAIRY_LEGGINGS",
+        "FAIRY_CHESTPLATE",
+        "FAIRY_HELMET"
+    )
+
+    @JvmStatic
+    val crystalIds = listOf(
+        "CRYSTAL_BOOTS",
+        "CRYSTAL_LEGGINGS",
+        "CRYSTAL_CHESTPLATE",
+        "CRYSTAL_HELMET"
+    )
 
     fun fetchColours() {
         val url = URL("https://gist.githubusercontent.com/codesad/16ecce757e53d507ab63de9c22f7d811/raw/")
@@ -29,16 +47,15 @@ object Colours {
             line = reader.readLine()
         }
         val json: JsonObject = JsonParser().parse(stringBuilder.toString()).asJsonObject
-        for (i in json.get("exotics").asJsonObject.entrySet()) {
-            val name = i.key
-            val colour = i.value.asString
-            exotic[name] = colour.toString().split("|").map { Integer.decode(it) }
+        json.get("exotics").asJsonObject.entrySet().forEach { (name, colour) ->
+            exotic[name] = colour.asString.split("|").map { Integer.decode(it) }
         }
-        for (i in json.get("fairy").asJsonArray) {
-            fairy.add(Integer.decode(i.asString))
+        json.get("glitched").asJsonObject.entrySet().forEach { (name, colour) ->
+            glitched[name] = colour.asString.split("|").map { Integer.decode(it) }
         }
-        for (i in json.get("crystal").asJsonArray) {
-            crystal.add(Integer.decode(i.asString))
-        }
+        json.get("fairy").asJsonArray.forEach { fairy.add(Integer.decode(it.asString)) }
+        fairyIds.forEach { exotic[it] = fairy }
+        json.get("crystal").asJsonArray.forEach { crystal.add(Integer.decode(it.asString)) }
+        crystalIds.forEach { exotic[it] = crystal }
     }
 }

@@ -35,9 +35,19 @@ object Config : Vigilant(File("config/Rainbow.toml"), "Rainbow") {
     @Property(type = PropertyType.SWITCH, name = "&aHighlight Fairy", description = "Highlights fairy pieces.", category = "Items")
     var fairyHighlight = true
 
+
     @JvmStatic
     @Property(type = PropertyType.COLOR, name = "&dFairy Colour", description = "Highlight colour for fairy pieces.", category = "Items")
     var fairyColour = Color(250, 30, 160, 120)
+
+    @JvmStatic
+    @Property(type = PropertyType.SWITCH, name = "&9Highlight Glitched", description = "Highlights pieces acquired through bugs.", category = "Items")
+    var glitchedHighlight = true
+
+
+    @JvmStatic
+    @Property(type = PropertyType.COLOR, name = "&9Glitched Colour", description = "Highlight colour for glitched pieces.", category = "Items")
+    var glitchedColour = Color(126, 213, 80, 120)
 
     @JvmStatic
     @Property(type = PropertyType.SWITCH, name = "&bDisable Enchant Glint", description = "Disables the enchant glint ONLY for leather armour pieces.", category = "Items")

@@ -5,12 +5,12 @@ Click [HERE](https://github.com/codesad/Rainbow/releases) to go to the download 
 
 ## Features
 ### Text
- - Coloured Hex Codes
+ - Coloured Hex Codes (Disable Patcher's Optimised Font Rendering)
  - Better Sign Colours
 ### Items
  - Highlighted Exotics
    - Highlights exotic armour in menus.
-   - Fairy and Crystal pieces have separate customisable colours.
+   - Fairy, Crystal and Glitched pieces have separate customisable colours.
  - No Enchant Glint
    - Only for leather armour.
  - Always Display Hex

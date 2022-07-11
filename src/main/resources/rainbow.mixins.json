@@ -14,5 +14,8 @@
     "MixinSplashProgressTransformer",
     "MixinTileEntitySignRenderer"
   ],
-  "verbose": true
+  "verbose": true,
+  "client": [
+    "IMixinGui"
+  ]
 }
