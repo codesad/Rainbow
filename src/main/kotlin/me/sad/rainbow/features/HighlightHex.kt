@@ -24,7 +24,7 @@ object HighlightHex {
                 val hex: String = text.substring(i + 1, i + 7)
                 if (hex.matches("-?[\\da-fA-F]+".toRegex())) {
                     matches = true
-                    for (j in i downTo 2) {
+                    for (j in i downTo 1) {
                         if (text[j - 1] == '\u00a7') {
                             lastCode = text[j]
                             break
