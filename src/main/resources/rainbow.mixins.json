@@ -4,17 +4,19 @@
   "package": "me.sad.rainbow.mixins",
   "refmap": "mixins.rainbow.refmap.json",
   "mixins": [
+    "IMixinGui",
     "IMixinGuiEditSign",
     "MixinFontRenderer",
     "MixinGuiContainer",
     "MixinLayerArmorBase",
     "MixinRenderItem",
     "MixinSplashProgress",
-    "MixinSplashProgressTransformer",
-    "MixinTileEntitySignRenderer"
+    "MixinTileEntitySignRenderer",
+    "patcher.MixinFontRendererHook",
+    "skytils.MixinSplashProgressTransformer"
   ],
   "verbose": true,
   "client": [
-    "IMixinGui"
+    "IMixinFontRenderer"
   ]
 }

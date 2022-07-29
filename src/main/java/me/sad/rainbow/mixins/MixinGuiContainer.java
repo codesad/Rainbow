@@ -2,7 +2,7 @@ package me.sad.rainbow.mixins;
 
 import me.sad.rainbow.Colours;
 import me.sad.rainbow.Config;
-import me.sad.rainbow.Utils;
+import me.sad.rainbow.utils.RenderUtils;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
@@ -31,28 +31,28 @@ public abstract class MixinGuiContainer {
 
         if (Colours.getFairy().contains(colour) && !Colours.getFairyIds().contains(id)) {
             if (Config.getFairyHighlight()) {
-                Utils.drawItemBackground(x, y, Config.getFairyColour());
+                RenderUtils.drawItemBackground(x, y, Config.getFairyColour());
             }
             return;
         }
 
         if (Colours.getCrystal().contains(colour) && !Colours.getCrystalIds().contains(id)) {
             if (Config.getCrystalHighlight()) {
-                Utils.drawItemBackground(x, y, Config.getCrystalColour());
+                RenderUtils.drawItemBackground(x, y, Config.getCrystalColour());
             }
             return;
         }
 
         if (Colours.getGlitched().containsKey(id) && Colours.getGlitched().get(id).contains(colour)) {
             if (Config.getGlitchedHighlight()) {
-                Utils.drawItemBackground(x, y, Config.getGlitchedColour());
+                RenderUtils.drawItemBackground(x, y, Config.getGlitchedColour());
             }
             return;
         }
 
         if (Colours.getExotic().containsKey(id) && !Colours.getExotic().get(id).contains(colour)) {
             if (Config.getExoticHighlight()) {
-                Utils.drawItemBackground(x, y, Config.getExoticColour());
+                RenderUtils.drawItemBackground(x, y, Config.getExoticColour());
             }
         }
     }

@@ -1,10 +1,10 @@
-package me.sad.rainbow
+package me.sad.rainbow.utils
 
 import me.sad.rainbow.mixins.IMixinGui
 import net.minecraft.client.Minecraft
 import java.awt.Color
 
-object Utils {
+object RenderUtils {
     @JvmStatic
     fun drawItemBackground(x: Int, y: Int, colour: Color) {
         val screen = Minecraft.getMinecraft().currentScreen as IMixinGui

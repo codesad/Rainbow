@@ -1,4 +1,4 @@
-package me.sad.rainbow.mixins;
+package me.sad.rainbow.mixins.skytils;
 
 import net.minecraft.util.ResourceLocation;
 import org.spongepowered.asm.mixin.Dynamic;

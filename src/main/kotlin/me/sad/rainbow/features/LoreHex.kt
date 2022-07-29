@@ -1,4 +1,4 @@
-package me.sad.rainbow.events
+package me.sad.rainbow.features
 
 import me.sad.rainbow.Config
 import net.minecraft.nbt.NBTTagCompound
@@ -7,7 +7,7 @@ import net.minecraft.util.StatCollector
 import net.minecraftforge.event.entity.player.ItemTooltipEvent
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 
-class TooltipEvent {
+class LoreHex {
     @SubscribeEvent
     fun onTooltip(event: ItemTooltipEvent) {
         if (Config.alwaysShowHex) {
