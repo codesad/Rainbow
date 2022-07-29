@@ -41,12 +41,12 @@ object Config : Vigilant(File("config/Rainbow.toml"), "Rainbow") {
     var fairyColour = Color(250, 30, 160, 120)
 
     @JvmStatic
-    @Property(type = PropertyType.SWITCH, name = "&9Highlight Glitched", description = "Highlights pieces acquired through bugs.", category = "Items")
+    @Property(type = PropertyType.SWITCH, name = "&2Highlight Glitched", description = "Highlights pieces acquired through bugs.", category = "Items")
     var glitchedHighlight = true
 
 
     @JvmStatic
-    @Property(type = PropertyType.COLOR, name = "&9Glitched Colour", description = "Highlight colour for glitched pieces.", category = "Items")
+    @Property(type = PropertyType.COLOR, name = "&2Glitched Colour", description = "Highlight colour for glitched pieces.", category = "Items")
     var glitchedColour = Color(126, 213, 80, 120)
 
     @JvmStatic

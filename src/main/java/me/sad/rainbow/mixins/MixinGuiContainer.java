@@ -30,7 +30,6 @@ public abstract class MixinGuiContainer {
         int y = slotIn.yDisplayPosition;
 
         if (Colours.getFairy().contains(colour) && !Colours.getFairyIds().contains(id)) {
-            System.out.println(id);
             if (Config.getFairyHighlight()) {
                 Utils.drawItemBackground(x, y, Config.getFairyColour());
             }
