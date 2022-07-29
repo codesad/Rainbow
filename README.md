@@ -5,7 +5,7 @@ Click [HERE](https://github.com/codesad/Rainbow/releases) to go to the download 
 
 ## Features
 ### Text
- - Coloured Hex Codes (Disable Patcher's Optimised Font Rendering)
+ - Coloured Hex Codes
  - Better Sign Colours
 ### Items
  - Highlighted Exotics
